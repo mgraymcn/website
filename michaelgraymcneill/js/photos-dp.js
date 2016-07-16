@@ -21,24 +21,24 @@ var main = function () {
         player = new YT.Player('youtube', {
             events: {
                  // call this function when player is ready to use
-                'onReady': onPlayerReady
+                'onReady': onPlayerReady;
+                player;
             }
         });
     };
 
     function onPlayerReady(event) {
         // bind events
-        var pauseButton = document.getElementsByClassName("pause-button");
-        pauseButton.addEventListener("click", function () {
-            player.stopVideo();
-        });
-    }
-
-    $('.pause-button').click(function () {
+        $('.pause-button').click(function () {
+        console.log("pause-button");
         player.stopVideo();
     });
+    }
+
+    
     
     $('.arrow-next').click(function () {
+        console.log("arrow-next");
         player.stopVideo();
 
         var currentSlide = $('.active-slide'),
